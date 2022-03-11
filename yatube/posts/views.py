@@ -4,19 +4,24 @@ from .models import Post, Group
 
 # модуль отвечающий за главную страницу
 def index(request):
-    posts = Post.objects.order_by('-pub_date')[:10]  # сохраняем выборку из БД в переменную
+    # сохраняем выборку из БД в переменную
+    posts = Post.objects.order_by('-pub_date')[:10]
+
+    # Из словаря context отправляем информацию в шаблон
     context = {
-        'posts': posts,  # Из словаря context отправляем информацию в шаблон
+        'posts': posts,
         'title': 'Последние обновления сайта.'
     }
-    return render(request, 'posts/index.html', context)  # вывод значений в html шаблон
+    # вывод значений в html шаблон
+    return render(request, 'posts/index.html', context)
 
 
 # модуль отвечающий за страницу сообщества
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
-    posts = Post.objects.filter(group=group).order_by('-pub_date')[:10]  # сохраняем выборку
-    context = {  # в соответствии с id группы
+    # сохраняем выборку в соответствии с id группы
+    posts = Post.objects.filter(group=group).order_by('-pub_date')[:10]
+    context = {
         'group': group,
         'posts': posts,
         'title': f'Записи сообщества {slug}',
