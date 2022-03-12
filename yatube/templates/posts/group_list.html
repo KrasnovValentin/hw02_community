@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container py-5">
+<div class='container py-5'>
     <p>
 <h4>{{ group }}</h4>
     </p>
@@ -11,12 +11,12 @@
             Автор: {{ post.author.get_full_name }}
           </li>
           <li>
-            Дата публикации: {{ post.pub_date|date:"d M Y" }}
+            Дата публикации: {{ post.pub_date|date:'d M Y' }}
           </li>
         </ul>
         <p>{{ post.text }}</p>
         {% if post.group %}
-            <a href="{% url 'posts:group_list' post.group.slug %}">все записи группы</a>
+            <a href='{% url 'posts:group_list' post.group.slug %}'>все записи группы</a>
         {% endif %}
      {% if not forloop.last %}<hr>{% endif %}
     {% endfor %}
