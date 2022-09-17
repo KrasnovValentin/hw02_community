@@ -1,7 +1,7 @@
 # backend_community_homework
 
 ## Спринт 3.
-Начало разработки учебного проекта на фреймворке **Django**.  
+Начало разработки учебного проекта **Yatube** на фреймворке **Django**.  
 Социальная сеть с возможностью создать учетную запись, публиковать записи, подписываться на любимых авторов и отмечать понравившиеся записи.
 
 ### В рамках проекта:
@@ -39,6 +39,8 @@
 - Содержимое тега `<title>` — для разных страниц разное:
     - для страницы группы: `Записи сообщества <имя_группы>`
     - для главной страницы: `Последние обновления на сайте.`
+
+#### Стек технологий: Python, Django, HTML, CSS
 
 
 [![CI](https://github.com/yandex-praktikum/hw02_community/actions/workflows/python-app.yml/badge.svg?branch=master)](https://github.com/yandex-praktikum/hw02_community/actions/workflows/python-app.yml)
